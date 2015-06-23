@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #wrapper
+    #logo
+      h1
+          |#{title2}
+          img(src='/images/livelong.png', height ='20', width ='20')
+    #display
+      include userbar
+        
+      -for (var id in items)
+        - var item = items[id]
+        div
+          a(href='/item/#{id}') #{item.name} - $#{item.price}
+      
+    include footer
